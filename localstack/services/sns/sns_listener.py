@@ -557,7 +557,7 @@ def create_sns_message_body(subscriber, req_data, message_id=None):
 
     for key in ['Subject', 'SubscribeURL', 'Token']:
         if req_data.get(key):
-            data[key] = req_data[key]
+            data[key] = req_data[key][0]
 
     attributes = get_message_attributes(req_data)
     if attributes:
